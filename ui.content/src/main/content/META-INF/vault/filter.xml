@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/amazonclone" mode="merge"/>
+    <filter root="/content/amazonclone" mode="merge"/>
+    <filter root="/content/dam/amazonclone" mode="merge">
+        <exclude pattern="/content/dam/amazonclone(/.*)?"/>
+        <include pattern="/content/dam/amazonclone/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/amazonclone/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/amazonclone" mode="merge"/>
+</workspaceFilter>
