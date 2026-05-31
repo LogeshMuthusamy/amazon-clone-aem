@@ -1,0 +1,21 @@
+<sly data-sly-use.model="com.amazonclone.core.models.FAQModel" />
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+  <sly
+    data-sly-call="${clientlib.all @ categories='amazonclone.components.faq'}"
+  />
+</sly>
+
+<div class="faq-component">
+  <div class="faq-actions">
+    <button class="expand-all" type="button">Expand All</button>
+    <button class="collapse-all" type="button">Collapse All</button>
+  </div>
+
+  <div data-sly-list.item="${model.faqItems}">
+    <div class="faq-item">
+      <div class="faq-question">${item.question}</div>
+
+      <div class="faq-answer">${item.answer}</div>
+    </div>
+  </div>
+</div>
