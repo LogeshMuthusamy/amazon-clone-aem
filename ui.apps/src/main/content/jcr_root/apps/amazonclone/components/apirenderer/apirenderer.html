@@ -1,0 +1,30 @@
+<!--/*
+    API Data Renderer HTML Template
+*/-->
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='amazonclone.components.apirenderer'}" />
+</sly>
+
+<div class="api-renderer" 
+     id="api-renderer-${resource.name}"
+     data-api-url="${properties.apiUrl || 'https://fakestoreapi.com/products'}"
+     data-api-limit="${properties.limit || 8}">
+    
+    <h2 class="api-renderer__title" data-sly-test="${properties.title}">${properties.title}</h2>
+    <h2 class="api-renderer__title" data-sly-test="${!properties.title}">Featured Products</h2>
+    
+    <!-- Loading State -->
+    <div class="api-renderer__loading">
+        <div class="api-renderer__spinner"></div>
+        <p>Loading products from store API...</p>
+    </div>
+    
+    <!-- Error State -->
+    <div class="api-renderer__error" style="display: none;">
+        <p>We encountered an error loading products. Please try again.</p>
+        <button class="api-renderer__retry-btn" type="button">Retry</button>
+    </div>
+
+    <!-- Dynamic Card Grid -->
+    <div class="api-renderer__grid" style="display: none;"></div>
+</div>
